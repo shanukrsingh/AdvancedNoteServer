@@ -1,0 +1,5 @@
+port=2000
+
+MONGO_URL=mongodb+srv://noteuser:penandpaper@cluster0.rdvdspt.mongodb.net/evernoteClone?retryWrites=true&w=majority
+MONGO_DB_NAME=evernoteClone
+MONGO_DB_NOTES_COLLECTION=notes
