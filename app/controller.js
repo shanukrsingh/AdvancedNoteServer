@@ -1,15 +1,30 @@
 const { createNote, fetchAllNotes, updateNote, deleteNote } = require('./model');
 const { getTime } = require('./helper');
 
+const jwt = require('jsonwebtoken');
+const User = require('../models/user.model');
+
+
+
 exports.createNewNote = async (req, res) => {
     try {
         const currentTime = getTime();
+
+        const someval = req.body['frontprop']
+        // console.log(req)
+
+        // const decoded = jwt.verify(token, 'secret123')
+        // const email = decoded.email
+        // const usernamed = await User.findOne({ email: email })
+
+
         let newNote = {
             title: 'Untitled',
             desc: '',
             createdAt: currentTime,
             updatedAt: currentTime,
-            archive: 0
+            archive: 0,
+            someprp: someval
         }
 
         let id = await createNote(newNote);
